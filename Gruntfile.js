@@ -123,6 +123,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-recess');
   grunt.loadNpmTasks('grunt-wp-version');
+  grunt.loadNpmTasks('grunt-rsync');
+
 
   // Register tasks
   grunt.registerTask('default', [
@@ -134,5 +136,8 @@ module.exports = function(grunt) {
   grunt.registerTask('dev', [
     'watch'
   ]);
+
+  //rename rsync task
+  grunt.renameTask('rsync', 'deploy');
 
 };
