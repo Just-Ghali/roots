@@ -90,7 +90,30 @@ module.exports = function(grunt) {
         'assets/css/main.min.css',
         'assets/js/scripts.min.js'
       ]
+    },
+    // deploy via rsync
+    deploy: {
+        options: {
+            src: "./",
+            args: ["--verbose"],
+            exclude: ['.git*', 'node_modules', '.sass-cache', 'Gruntfile.js', 'package.json', '.DS_Store', 'README.md', 'config.rb', '.jshintrc'],
+            recursive: true,
+            syncDestIgnoreExcl: true
+        },
+        staging: {
+            options: {
+                dest: "~/path/to/theme",
+                host: "user@host.com"
+            }
+        },
+        production: {
+            options: {
+                dest: "~/path/to/theme",
+                host: "user@host.com"
+            }
+        }
     }
+
   });
 
   // Load tasks
