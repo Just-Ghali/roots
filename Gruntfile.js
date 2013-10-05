@@ -30,6 +30,7 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'assets/js/scripts.min.js': [
+            'assets/js/plugins/init/*.js', // initial js libraries to load
             'assets/js/plugins/bootstrap/transition.js',
             'assets/js/plugins/bootstrap/alert.js',
             'assets/js/plugins/bootstrap/button.js',
